@@ -14,9 +14,9 @@ const Riyadh = () => {
         <h2 className="card-title">My Name Is Riyad Ali Mollik</h2>
         <p>Id : 221-15-5096</p>
         <h2 className="text-2xl">Assignment</h2>
-        <Link to="https://drive.google.com/drive/folders/14j6ueHtQrES2BZ7n-9qz95wr6RjCxaj7?usp=sharing"><p className="text-cyan-400 underline-offset-1">SRS V1</p></Link>
-        <Link to=""><p className="text-cyan-400 underline-offset-1">SRS V2</p></Link>
-        <Link to=""><p className="text-cyan-400 underline-offset-1">SRS V3</p></Link>
+        <Link to="https://drive.google.com/drive/folders/1caN3ssXsg_PWNKKpMpUH9RhZOr9WjsJU?usp=sharing"><p className="text-cyan-400 underline-offset-1">SRS V1</p></Link>
+        <Link to="https://drive.google.com/drive/folders/1IBqzhowPe2KuLUOaFjh-MwfPED0UWgwn?usp=sharing"><p className="text-cyan-400 underline-offset-1">SRS V2</p></Link>
+        <Link to="https://drive.google.com/drive/folders/1qqGcWIBu6SeUT92IiJlNOjHculcnYRDf?usp=sharing"><p className="text-cyan-400 underline-offset-1">SRS V3</p></Link>
       </div>
     </div>
   );
