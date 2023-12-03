@@ -7,15 +7,12 @@ import Location from "./location/Location"
 import Recent from "./recent/Recent"
 import Team from "./team/Team"
 
-import Test from "../../components/common/test/Test"
-
 const Home = () => {
   return (
     <>
       <Hero />
       <Featured />
       <Recent />
-     <Test/>
       <Location />
       <Awards /> 
       <Team />

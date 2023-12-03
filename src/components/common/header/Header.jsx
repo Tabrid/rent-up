@@ -1,20 +1,14 @@
 import React, { useState } from "react"
 import "./header.css"
-import { nav } from "../../data/Data"
 import { Link } from "react-router-dom"
-import { useContext } from "react"
-import { AuthContext } from "../../../Context/AuthProvider"
+
 
 const Header = () => {
   const [navList, setNavList] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
+  
 
 
-  const handleLogOut = () => {
-    logOut()
-      .then(() => { })
-      .catch(error => console.log(error));
-  }
+  
 
   return (
     <>
@@ -24,47 +18,25 @@ const Header = () => {
             <img src='./images/logo.png' alt='' />
           </div>
           <div className='nav'>
-            <ul className={navList ? "small" : "flex"}>
-              {nav.map((list, index) => (
-                <li key={index}>
-                  <Link to={list.path}>{list.text}</Link>
-                </li>
-              ))}
-              
+            <ul className="menu menu-horizontal px-1">
+              <Link to='/'><li className="btn btn-sm bg-white hover:bg-white border-0">Home</li></Link>
+              <li >
+                <details>
+                  <summary className="btn btn-sm mx-3 bg-white hover:bg-white border-0">Our Team</summary>
+                  <ul>
+                    <Link to='/riyadh'><li className="  mx-5">Riyadh</li></Link>
+                    <Link to='/tomal'><li className="  mx-5">Tomal</li></Link>
+                    <Link to='/sayed'><li className="  mx-5">Abu Sayed</li></Link>
+                    <Link to='/saiful'><li className="  mx-5">Saiful</li></Link>
+                    <Link to='/procchod'><li className="  mx-5">Procchod</li></Link>
+                    
+                  </ul>
+                </details>
+              </li>
+              <Link to='/about'><li className="btn btn-sm bg-white hover:bg-white border-0">About</li></Link>
             </ul>
-            
           </div>
-          <div className='button flex'>
-
-            {user?.uid ?
-              <div className="dropdown dropdown-hover dropdown-left">
-                <label tabIndex={0} className="btn1 m-1">
-                  <div className="avatar online">
-                    <div className="w-12 rounded-full">
-                      <img src="https://i.ibb.co/WKQGWtd/user.png" alt="" />
-                    </div>
-                  </div>
-                </label>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                  <li>
-                    <Link to='/dashboard'>
-                      <button className="btn1" >
-                        Dashboard
-                      </button>
-                    </Link>
-                  </li>
-                  <li><button className='btn1 mt-2' onClick={handleLogOut}>
-                    <i className='fa fa-sign-out'></i> Log-Out
-                  </button></li>
-                </ul>
-              </div>
-
-              : <Link to='/login'> <button className='btn1'>
-                <i className='fa fa-sign-out'></i> Sign In
-              </button></Link>
-
-            }
-          </div>
+          
 
           <div className='toggle'>
             <button onClick={() => setNavList(!navList)}>{navList ? <i className='fa fa-times'></i> : <i className='fa fa-bars'></i>}</button>

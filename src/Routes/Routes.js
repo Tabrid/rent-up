@@ -63,7 +63,7 @@ export const router = createBrowserRouter([
                 element: <Tomal></Tomal>,
             },
             {
-                path : '/poccod',
+                path : '/procchod',
                 element: <Poccod></Poccod>,
             },
             {
